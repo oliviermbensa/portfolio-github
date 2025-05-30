@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio Olivier Mbensa - Passionné de Programmation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&amp;display=swap" rel="stylesheet" />
+  <style>
+    /* Reset and base */
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #2c003e, #3b0070, #4a009d);
+      color: #eee;
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.6;
+      position: relative;
+      background-attachment: fixed;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      outline-offset: 3px;
+    }
+    a:hover, a:focus {
+      color: #b294fb;
+      outline: none;
+      text-shadow: 0 0 8px #b294fb;
+    }
+    /* Container */
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-bottom: 3em;
+      position: relative;
+      z-index: 2;
+    }
+    /* Header */
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #a084f9;
+      position: relative;
+      z-index: 3;
+      padding: 0 1em;
+      text-shadow:
+         0 0 10px #8d63f7,
+         0 0 20px #8d63f7,
+         0 0 30px #9b59b6,
+         0 0 40px #a084f9,
+         0 0 70px #a084f9,
+         0 0 80px #a084f9,
+         0 0 100px #a084f9,
+         0 0 150px #9b59b6;
+    }
+    header h1 {
+      font-size: 3.8rem;
+      font-weight: 700;
+      margin-bottom: 0.3em;
+      letter-spacing: 0.1em;
+      filter: drop-shadow(0 0 16px #a084f9);
+      transition: text-shadow 0.5s ease;
+    }
+    header h1:hover,
+    header h1:focus {
+      text-shadow:
+         0 0 20px #b294fb,
+         0 0 40px #b294fb,
+         0 0 60px #c6abf9,
+         0 0 100px #c6abf9,
+         0 0 150px #d9bcff;
+      cursor: default;
+    }
+    header h2 {
+      font-weight: 300;
+      font-size: 1.5rem;
+      margin-bottom: 1.5em;
+      color: #c2a7f8;
+      text-shadow: 0 0 12px #6d4ddb;
+      transition: color 0.4s ease;
+    }
+    header p {
+      max-width: 540px;
+      font-size: 1.15rem;
+      color: #d0f1df;
+      margin-bottom: 2em;
+      text-shadow: 0 0 8px #442a64;
+      transition: opacity 0.5s ease;
+    }
+    header .btn-contact {
+      display: inline-block;
+      background: #a084f9;
+      color: #23036a;
+      padding: 0.85em 2.2em;
+      font-weight: 700;
+      border-radius: 50px;
+      box-shadow:
+        0 9px 14px rgba(160, 132, 249, 0.85),
+        0 0 25px #a084f9;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      transition: all 0.3s ease;
+      user-select: none;
+      outline-offset: 4px;
+      font-size: 1.1rem;
+      text-shadow: 0 0 5px #4625a0;
+      filter: drop-shadow(0 0 5px #a084f9);
+    }
+    header .btn-contact:hover,
+    header .btn-contact:focus {
+      box-shadow:
+        0 12px 22px rgba(160, 132, 249, 1),
+        0 0 45px #9b59b6,
+        0 0 80px #9b59b6;
+      transform: translateY(-5px) scale(1.05);
+      color: #3c0078;
+      outline: none;
+    }
+
+    /* Sections */
+    section {
+      padding: 4em 0;
+      color: #eee;
+      position: relative;
+      z-index: 3;
+      text-shadow:
+        0 0 5px #331a6b;
+    }
+
+    section h3 {
+      font-size: 2.75rem;
+      font-weight: 700;
+      margin-bottom: 0.7em;
+      text-align: center;
+      color: #a084f9;
+      text-shadow:
+        0 0 12px #a084f9,
+        0 0 18px #9b59b6;
+      transition: color 0.4s ease;
+    }
+    section h2:hover,
+    section h2:focus {
+      color: #caaeeb;
+      cursor: default;
+      text-shadow:
+        0 0 20px #caaeeb,
+        0 0 35px #b494f9;
+    }
+      section h3{
+      font-weight: 500;
+      font-size: 1.4rem;
+      margin-bottom: 1em;
+      color: #d0f1df;
+      text-align: center;
+      text-shadow: 0 0 6px #1f3d30;
+      ;
+    }
+    
+    /* About */
+    #about p {
+      max-width: 700px;
+      margin: 1em auto 0;
+      font-size: 1.1rem;
+      color: #d0f1df;
+      line-height: 1.7;
+      text-align: center;
+      filter: drop-shadow(0 0 2px #4b37a4);
+    }
+
+    /* Skills */
+    #skills {
+      background: rgba(160, 132, 249, 0.07);
+      border-radius: 15px;
+      padding: 3em 1em 4em;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2.2em;
+      box-shadow:
+        0 0 35px #a084f933,
+        inset 0 0 25px #7e58cf20;
+      transition: box-shadow 0.4s ease;
+    }
+    #skills:hover,
+    #skills:focus-within {
+      box-shadow:
+        0 0 65px #9b59b699,
+        inset 0 0 42px #a084f944;
+    }
+    .skill-card {
+      background: rgba(39, 26, 67, 0.9);
+      border-radius: 15px;
+      box-shadow:
+        0 0 25px rgba(160, 132, 249, 0.3),
+        0 5px 15px rgba(160, 132, 249, 0.5),
+        inset 0 -3px 10px #a084f980;
+      width: 140px;
+      height: 140px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 1em;
+      color: #a084f9;
+      font-weight: 600;
+      cursor: default;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+      position: relative;
+      overflow: hidden;
+      filter: drop-shadow(0 0 7px #a084f9aa);
+    }
+    .skill-card:hover,
+    .skill-card:focus-visible {
+      transform: translateY(-12px) scale(1.12);
+      box-shadow:
+        0 12px 30px #a084f9cc,
+        0 0 25px #a084f9dd,
+        inset 0 0 42px #caaeeb77;
+      outline: none;
+      z-index: 11;
+    }
+    .skill-card svg {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 0.5em;
+      fill: #a084f9;
+      filter: drop-shadow(0 0 6px #a084f9cc);
+      transition: transform 0.3s ease;
+    }
+    .skill-card:hover svg,
+    .skill-card:focus-visible svg {
+      transform: scale(1.15);
+      filter: drop-shadow(0 0 12px #caaeebcc);
+    }
+
+    /* Socials */
+    #socials {
+      text-align: center;
+      margin-top: 2em;
+      padding-top: 1.2em;
+      border-top: 1px solid #a084f922;
+      display: flex;
+      justify-content: center;
+      gap: 2.8em;
+      filter: drop-shadow(0 0 6px #a084f980);
+      z-index: 3;
+      position: relative;
+    }
+    .social-icon {
+      width: 48px;
+      height: 48px;
+      fill: #a084f9;
+      cursor: pointer;
+      transition: transform 0.3s ease, fill 0.3s ease, filter 0.3s ease;
+      filter: drop-shadow(0 0 8px #a084f9aa);
+      user-select: none;
+    }
+    .social-icon:hover,
+    .social-icon:focus {
+      fill: #7f00ff;
+      transform: scale(1.15) rotate(6deg);
+      filter: drop-shadow(0 0 18px #7f00ffdd);
+      outline: none;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      color: #a084f9aa;
+      font-size: 0.9rem;
+      padding: 2em 1em 3em;
+      user-select: none;
+      text-shadow:
+        0 0 10px #a084f933,
+        0 0 15px #a084f944;
+      border-top: 1px solid #a084f922;
+      background: linear-gradient(90deg, #240047 0%, #44107a 100%);
+      filter: drop-shadow(0 0 18px #7f00ff55);
+      position: relative;
+      z-index: 3;
+      font-weight: 500;
+    }
+    footer a {
+      color: #caaeeb;
+      font-weight: 600;
+      text-shadow: 0 0 6px #caaeeb;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+    footer a:hover,
+    footer a:focus {
+      color: #b294fb;
+      text-shadow: 0 0 15px #b294fb;
+      outline: none;
+    }
+
+    /* Smooth fade and slide in animations */
+    .fade-slide-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-slide-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Dynamic coding lines background */
+    #background-coding {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      opacity: 0.08;
+      z-index: 0;
+      background: radial-gradient(ellipse at center, #a084f9 25%, transparent 80%);
+      overflow: hidden;
+      filter: drop-shadow(0 0 15px #a084f9cc);
+    }
+    /* programming code lines animation */
+    .code-line {
+      position: absolute;
+      top: 0;
+      width: 2px;
+      height: 100vh;
+      background: linear-gradient(
+        180deg,
+        rgba(160, 132, 249, 0.3) 0%,
+        rgba(160, 132, 249, 0) 70%
+      );
+      animation: moveDown linear infinite;
+      filter: drop-shadow(0 0 6px #a084f9);
+      opacity: 0.7;
+      will-change: transform, opacity;
+    }
+    @keyframes moveDown {
+      0% {
+        transform: translateY(-100vh);
+        opacity: 0;
+      }
+      20% {
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+
+    /* Floating code icons animations */
+    .floating-icon {
+      position: fixed;
+      bottom: 5%;
+      font-weight: 700;
+      color: #a084f99e;
+      font-size: 18px;
+      user-select: none;
+      pointer-events: none;
+      filter: drop-shadow(0 0 5px #a084f95e);
+      animation-timing-function: linear;
+      opacity: 0.5;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+    }
+    .floating-icon:hover {
+      opacity: 0.9;
+    }
+    .float-spin {
+      animation: floatSpin 12s linear infinite;
+    }
+    .float-up {
+      animation: floatUp 9s linear infinite;
+    }
+    .float-wobble {
+      animation: floatWobble 11s ease-in-out infinite;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.3;
+      }
+      50% {
+        transform: translateY(-40px) scale(1.1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.3;
+      }
+    }
+    @keyframes floatSpin {
+      0% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 0.4;
+      }
+      50% {
+        transform: translateY(-35px) rotate(180deg) scale(1.1);
+        opacity: 0.85;
+      }
+      100% {
+        transform: translateY(0) rotate(360deg) scale(1);
+        opacity: 0.4;
+      }
+    }
+    @keyframes floatWobble {
+      0% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+        opacity: 0.5;
+      }
+      25% {
+        transform: translateX(10px) translateY(-10px) rotate(5deg);
+        opacity: 1;
+      }
+      50% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+        opacity: 0.5;
+      }
+      75% {
+        transform: translateX(-10px) translateY(-10px) rotate(-5deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+        opacity: 0.5;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.7rem;
+      }
+      header h2 {
+        font-size: 1.2rem;
+      }
+      section h2 {
+        font-size: 2.2rem;
+      }
+      .skill-card {
+        width: 120px;
+        height: 120px;
+      }
+      #projects {
+        grid-template-columns: 1fr;
+      }
+      .floating-icon {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Dynamic programming lines background effect -->
+  <div id="background-coding" aria-hidden="true"></div>
+
+  <!-- Floating code icons for subtle animations -->
+  <div class="floating-icon float-spin" style="left: 5vw; bottom: 12vh;" aria-hidden="true">&#123;&#125;</div>  <!-- Curly braces -->
+  <div class="floating-icon float-up" style="left: 20vw; bottom: 8vh;" aria-hidden="true">;</div>  <!-- Semicolon -->
+  <div class="floating-icon float-wobble" style="left: 35vw; bottom: 10vh;" aria-hidden="true">&lt;/&gt;</div>  <!-- Code tag -->
+  <div class="floating-icon float-spin" style="left: 50vw; bottom: 13vh;" aria-hidden="true">&#40;&#41;</div>  <!-- Parentheses -->
+  <div class="floating-icon float-up" style="left: 65vw; bottom: 9vh;" aria-hidden="true">&#36;</div>   <!-- Dollar sign -->
+  <div class="floating-icon float-wobble" style="left: 80vw; bottom: 12vh;" aria-hidden="true">&#47;&#42;</div> <!-- /* comment -->
+
+  <header>
+    <h1 tabindex="0">Olivier Mbensa</h1>
+    <h2 tabindex="0">Étudiant UPC | Passionné de Programmation</h2>
+    <p tabindex="0">Bienvenue sur mon portfolio ! Je suis un étudiant passionné par le développement logiciel, curieux, créatif et toujours prêt à relever de nouveaux défis dans le monde de la programmation.</p>
+    <a href="#contact" class="btn-contact">Me Contacter</a>
+  </header>
+
+  <main class="container" role="main">
+    <section id="about" class="fade-slide-up" aria-labelledby="about-title" tabindex="0">
+      <h2 id="about-title">À propos de moi</h2>
+      <p>
+        Bonjour! Je m'appelle Olivier Mbensa, étudiant à UPC et passionné de programmation. J'aime concevoir et développer des applications efficaces et innovantes. Mon objectif est d'améliorer constamment mes compétences et de contribuer à des projets qui font une différence.
+      </p>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-title" tabindex="0">
+      <h2 id="skills-title">Compétences</h2>
+      <div class="skill-card" title="HTML5" tabindex="0" role="img" aria-label="Logo HTML5">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M1.5 0l1.796 20.616 8.705 2.406 8.713-2.41L22.5 0H1.5zm15.746 7.57H10.578v1.14h6.075l-.577 5.996-5.65 1.58-.006-.014-5.789-1.56-.377-4.193H5.6l.92 10.128 8.029 2.154 8.028-2.154.509-5.367h-2.714l-.415 4.34z"/></svg>
+        HTML5
+      </div>
+      <div class="skill-card" title="CSS3" tabindex="0" role="img" aria-label="Logo CSS3">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M1.5 0l1.797 20.616 8.704 2.41 8.714-2.41L22.5 0H1.5zm15.594 7.624H10.66v1.14h6.028l-.635 6.603-5.702 1.524-.005-.014-5.865-1.496-.334-3.694H5.643l.895 10.685 8.17 2.193 8.173-2.193.375-4.135H10.09v-1.14h6.91v-.91z"/></svg>
+        CSS3
+      </div>
+      <div class="skill-card" title="JavaScript" tabindex="0" role="img" aria-label="Logo JavaScript">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 2L2 7v10l10 5 10-5V7l-10-5zm3.136 13.7c.07 1.04-.547 1.54-1.39 1.54-.74 0-1.2-.385-1.427-.846l-.765.42c.27.72 1.01 1.39 2.23 1.39 1.27 0 2.37-.88 2.44-2.44.08-1.68-1.19-2.15-2.59-2.57-.853-.24-1.218-.42-1.218-.84 0-.37.29-.69 1.11-.69.53 0 .87.18 1.11.687l.73-.43c-.34-.6-1.07-1.05-2.03-1.05-1.17 0-2.14.72-2.21 1.81-.04.68.4 1.14 1.14 1.4.789.31 1.166.48 1.164.87zm-5.07-2.197h1.184v3.165h.924V10.3H10.2v.88H8.067v-.877z"/></svg>
+        JavaScript
+      </div>
+      <div class="skill-card" title="Python" tabindex="0" role="img" aria-label="Logo Python">
+        <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false" fill="currentColor">
+          <path d="M32 12c-8 0-8 10-8 10H44s.9-6-6-6H32zM24 40c8 0 8-10 8-10H20s-.9 6 6 6h-6zM10 20h4v4h-4v-4zm34 24h-4v-4h4v4z"/>
+        </svg>
+        Python
+      </div>
+    </section>
+
+    <section id="socials" aria-label="Réseaux sociaux" tabindex="0">
+      <a href="https://github.com/oliviermbensa" target="_blank" rel="noopener noreferrer" aria-label="GitHub" tabindex="0" class="social-icon" title="GitHub">
+        <svg role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.38 7.85 10.9.57.1.77-.25.77-.55v-2c-3.19.7-3.86-1.54-3.86-1.54-.53-1.37-1.3-1.74-1.3-1.74-1.06-.73.08-.72.08-.72 1.17.08 1.78 1.2 1.78 1.2 1.04 1.77 2.73 1.26 3.4.97.1-.76.41-1.26.75-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.28 1.2-3.08-.12-.29-.52-1.48.12-3.1 0 0 .97-.31 3.19 1.18a11 11 0 0 1 5.8 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.62.23 2.81.11 3.1.75.8 1.2 1.82 1.2 3.08 0 4.43-2.68 5.4-5.24 5.7.42.36.8 1.07.8 2.16v3.2c0 .31.2.66.78.55A10.53 10.53 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/olivier mbensa" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" tabindex="0" class="social-icon" title="LinkedIn">
+        <svg role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M22.225 0H1.771C.792 0 0 .774 0 1.729v20.543C0 23.226.792 24 1.77 24h20.452C23.21 24 24 23.226 24 22.272V1.729C24 .774 23.21 0 22.225 0zM7.09 20.452H3.545v-10.7H7.09v10.7zm-1.773-12.256c-1.133 0-2.051-.933-2.051-2.08 0-1.148.917-2.08 2.05-2.08 1.134 0 2.05.932 2.05 2.08 0 1.147-.916 2.08-2.05 2.08zM20.455 20.452h-3.544v-5.802c0-3.044-3.965-2.82-3.965 0v5.802h-3.544v-10.7h3.544v1.48c1.647-3.127 8.455-3.377 8.455 2.99v6.23z"/></svg>
+      </a>
+      <a href="https://twitter.com/oliviermbensa" target="_blank" rel="noopener noreferrer" aria-label="Twitter" tabindex="0" class="social-icon" title="Twitter">
+        <svg role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Twitter</title><path d="M23.955 4.569c-.885.39-1.83.654-2.825.775 1.014-.608 1.794-1.572 2.163-2.724-.949.56-2.002.973-3.127 1.195-.897-.954-2.178-1.55-3.594-1.55-2.717 0-4.92 2.226-4.92 4.968 0 .39.045.765.127 1.124-4.09-.205-7.719-2.158-10.148-5.13-.423.724-.666 1.562-.666 2.462 0 1.7.867 3.2 2.188 4.076-.806-.027-1.566-.255-2.228-.635v.062c0 2.388 1.693 4.384 3.946 4.837-.413.11-.849.17-1.296.17-.316 0-.624-.027-.923-.077.625 1.956 2.444 3.38 4.6 3.422-1.68 1.318-3.8 2.104-6.101 2.104-.396 0-.79-.023-1.177-.067 2.179 1.39 4.768 2.2 7.557 2.2 9.054 0 14-7.496 14-13.985 0-.21 0-.423-.015-.633.962-.694 1.8-1.562 2.46-2.55z"/></svg>
+      </a>
+    </section>
+
+    <section id="contact" tabindex="0" aria-labelledby="contact-title" style="padding-top: 2em;">
+      <h2 id="contact-title">Me Contacter</h2>
+      <p style="text-align:center; max-width: 600px; margin: 0.5em auto 2em; color:#caaeeb; text-shadow: 0 0 6px #6d4ddb;">
+        Vous pouvez me contacter via mes réseaux sociaux ci-dessus ou par email à l'adresse : <a href="mailto:olivier.mbensa@upc.edu" style="color:#b294fb">olivier.mbensa@upc.edu</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2024 Olivier Mbensa - Étudiant UPC | Portfolio créé avec passion &#128187;.  
+    <br />
+    <a href="mailto:oliviermbensa15@gmail.com" aria-label="Envoyer un email à Olivier Mbensa">Contactez-moi</a>
+  </footer>
+
+  <script>
+    // Fade slide in on scroll for .fade-slide-up elements
+    document.addEventListener('DOMContentLoaded', () => {
+      const faders = document.querySelectorAll('.fade-slide-up');
+      const appearOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
+      };
+
+      const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('visible');
+          appearOnScroll.unobserve(entry.target);
+        });
+      }, appearOptions);
+
+      faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+      });
+    });
+
+    // Create dynamic code lines in background
+    const bg = document.getElementById('background-coding');
+    const codeLineCount = 30;
+
+    for(let i=0; i<codeLineCount; i++){
+      const line = document.createElement('div');
+      line.classList.add('code-line');
+      line.style.left = (Math.random() * 100) + 'vw';
+      line.style.animationDuration = (8 + Math.random()*5) + 's';
+      line.style.animationDelay = (Math.random()*15) + 's';
+      line.style.height = (40 + Math.random()*60) + 'vh';
+      bg.appendChild(line);
+    }
+  </script>
+</body>
+</html>
+
